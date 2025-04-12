@@ -3,8 +3,8 @@ import React from "react";
 export default function AddExpense() {
   return (
     <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name.."/>
+    <label for="fname">Add Expense</label>
+    <input type="text" id="fname" name="Add Expense" placeholder="Your name.."/>
 
     <label for="lname">Last Name</label>
     <input type="text" id="lname" name="lastname" placeholder="Your last name.."/>
