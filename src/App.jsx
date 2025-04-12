@@ -3,12 +3,14 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Table from './components/Table'
+import AddExpense from './AddExpense'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <AddExpense/>
     <Table/>
       <div>
         <a href="https://vite.dev" target="_blank">
