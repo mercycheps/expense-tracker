@@ -8,15 +8,20 @@ import SearchBar from "./components/searchbar";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [expenses, setExpenses] = useState([]);
+
+  const saveExpense = (expense) => {
+    setExpenses(expenses.concat([expense]));
+  };
 
   return (
     <div style={{ display: "flex" }}>
       <div>
-        <AddExpense />
+        <AddExpense saveExpense={saveExpense} />
       </div>
       <div>
         <SearchBar />
-        <Table />
+        <Table expenses={expenses} />
       </div>
     </div>
   );

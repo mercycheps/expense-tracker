@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function AddExpense() {
+export default function AddExpense({saveExpense}) {
 
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
@@ -9,7 +9,8 @@ export default function AddExpense() {
   const [date, setDate] = useState('')
 
   function createNewExpense(){
-    console.log({
+    
+    saveExpense({
       name,
       description,
       category, amount, date
@@ -18,22 +19,22 @@ export default function AddExpense() {
 
   return (
     <div style={{maxWidth: "300px"}}>
-      <label for="fname">Add Expense</label>
+      <label>Add Expense</label>
       <input
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
-      <label for="lname">Last Name</label>
+      <label >Last Name</label>
       <input
         type="text"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
 
-      <label for="country">Country</label>
-      <select id="country" name="country">
+      <label>Country</label>
+      <select name="country">
         <option value="australia">Australia</option>
         <option value="canada">Canada</option>
         <option value="usa">USA</option>
