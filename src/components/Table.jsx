@@ -1,7 +1,9 @@
 import React from "react";
 
 export default function Table({ expenses, search }) {
-  const filteredExpenses = expenses.filter((expense) => expense.description.includes(search))
+  const filteredExpenses = expenses
+    .filter((expense) => expense.description.includes(search))
+    .sort((a, b) => a.category.localeCompare(b.category));
   return (
     <table style={{ width: "70vw" }}>
       <thead>
@@ -10,6 +12,7 @@ export default function Table({ expenses, search }) {
           <th>Description</th>
           <th>Category</th>
           <th>Amount</th>
+          <th>Date</th>
         </tr>
       </thead>
 
@@ -22,6 +25,7 @@ export default function Table({ expenses, search }) {
               <td>{expense.description}</td>
               <td>{expense.category}</td>
               <td>{expense.amount}</td>
+              <td>{expense.date}</td>
             </tr>
           );
         })}
