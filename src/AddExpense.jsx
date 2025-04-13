@@ -55,10 +55,10 @@ export default function AddExpense({ saveExpense }) {
 
       <label> Date </label>
       <input
-        type="text"
+        type="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
-      />
+      /><br/>
 
       <button onClick={createNewExpense}> Submit </button>
     </div>
