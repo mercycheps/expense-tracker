@@ -1,44 +1,64 @@
 import React, { useState } from "react";
 
-export default function AddExpense({saveExpense}) {
+export default function AddExpense({ saveExpense }) {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [amount, setAmount] = useState("");
+  const [date, setDate] = useState("");
 
-  const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
-  const [category, setCategory] = useState('')
-  const [amount, setAmount] = useState('')
-  const [date, setDate] = useState('')
-
-  function createNewExpense(){
-    
+  function createNewExpense() {
     saveExpense({
       name,
       description,
-      category, amount, date
-    })
+      category,
+      amount,
+      date,
+    });
+
+    setAmount('')
+    setCategory('')
+    setDescription('')
+    setName('')
+    setDate('')
   }
 
   return (
-    <div style={{maxWidth: "300px"}}>
-      <label>Add Expense</label>
+    <div style={{ minWidth: "20vw" }}>
+      <label>Expense Name</label>
       <input
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
-      <label >Last Name</label>
+      <label>Description </label>
       <input
         type="text"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
 
-      <label>Country</label>
-      <select name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
+      <label>Category </label>
+      <input
+        type="text"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+      />
+
+      <label>Amount</label>
+      <input
+        type="text"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+      />
+
+      <label> Date </label>
+      <input
+        type="text"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+      />
 
       <button onClick={createNewExpense}> Submit </button>
     </div>

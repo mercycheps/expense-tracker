@@ -19,7 +19,7 @@ function App() {
       <div>
         <AddExpense saveExpense={saveExpense} />
       </div>
-      <div>
+      <div style={{marginLeft: "10px"}}>
         <SearchBar />
         <Table expenses={expenses} />
       </div>
