@@ -9,6 +9,7 @@ import SearchBar from "./components/searchbar";
 function App() {
   const [count, setCount] = useState(0);
   const [expenses, setExpenses] = useState([]);
+  const [search, setSearch] = useState("");
 
   const saveExpense = (expense) => {
     setExpenses(expenses.concat([expense]));
@@ -19,9 +20,9 @@ function App() {
       <div>
         <AddExpense saveExpense={saveExpense} />
       </div>
-      <div style={{marginLeft: "10px"}}>
-        <SearchBar />
-        <Table expenses={expenses} />
+      <div style={{ marginLeft: "10px" }}>
+        <SearchBar searchTerm={search} onSearchChange={setSearch} />
+        <Table search={search} expenses={expenses} />
       </div>
     </div>
   );

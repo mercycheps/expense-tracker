@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function Table({ expenses }) {
+export default function Table({ expenses, search }) {
+  const filteredExpenses = expenses.filter((expense) => expense.description.includes(search))
   return (
     <table style={{ width: "70vw" }}>
       <thead>
@@ -14,7 +15,7 @@ export default function Table({ expenses }) {
 
       <tbody>
         {/* Map through list of expenses and create a row in tablw */}
-        {expenses.map((expense, i) => {
+        {filteredExpenses.map((expense, i) => {
           return (
             <tr key={i}>
               <td>{expense.name}</td>
