@@ -26,6 +26,7 @@ export default function Table({ expenses, search }) {
               <td>{expense.category}</td>
               <td>{expense.amount}</td>
               <td>{expense.date}</td>
+              <td><button>delete</button></td>
             </tr>
           );
         })}

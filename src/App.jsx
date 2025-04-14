@@ -10,7 +10,14 @@ function App() {
 
   const saveExpense = (expense) => {
     setExpenses(expenses.concat([expense]));
+    console.log(expenses);
   };
+
+//   const deleteExpense= ()=> {
+// setExpenses(expenses.filter((expense) => expense.))
+//   }
+
+
 
   return (
     <div>

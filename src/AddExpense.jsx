@@ -6,9 +6,11 @@ export default function AddExpense({ saveExpense }) {
   const [category, setCategory] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
+  const [id, setid] = useState(Date.now());
 
   function createNewExpense() {
     saveExpense({
+      id,
       name,
       description,
       category,
@@ -21,37 +23,42 @@ export default function AddExpense({ saveExpense }) {
     setDescription('')
     setName('')
     setDate('')
+    setid(Date.now)
   }
 
   return (
     <div className="myform" style={{ minWidth: "20vw" }}>
       <h2>Add expense</h2>
       <p>Enter your expenses below</p>
-      <label>Expense Name</label>
+      
       <input
         type="text"
         value={name}
+        placeholder="Expense Name"
         onChange={(e) => setName(e.target.value)}
       />
 
-      <label>Description </label>
+      
       <input
         type="text"
         value={description}
+        placeholder="description"
         onChange={(e) => setDescription(e.target.value)}
       />
 
-      <label>Category </label>
+      
       <input
         type="text"
         value={category}
+        placeholder="category"
         onChange={(e) => setCategory(e.target.value)}
       />
 
-      <label>Amount</label>
+      
       <input
         type="text"
         value={amount}
+        placeholder="amount"
         onChange={(e) => setAmount(e.target.value)}
       />
 
@@ -59,6 +66,7 @@ export default function AddExpense({ saveExpense }) {
       <input
         type="date"
         value={date}
+        
         onChange={(e) => setDate(e.target.value)}
       /><br/>
 
