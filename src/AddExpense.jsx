@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./AddExpense.css"
 export default function AddExpense({ saveExpense }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -24,7 +24,9 @@ export default function AddExpense({ saveExpense }) {
   }
 
   return (
-    <div style={{ minWidth: "20vw" }}>
+    <div className="myform" style={{ minWidth: "20vw" }}>
+      <h2>Add expense</h2>
+      <p>Enter your expenses below</p>
       <label>Expense Name</label>
       <input
         type="text"

@@ -13,13 +13,22 @@ function App() {
   };
 
   return (
-    <div style={{ display: "flex" }}>
-      <div>
-        <AddExpense saveExpense={saveExpense} />
+    <div>
+      <div style={{ left: "3px", top: "0px", textAlign: "left" }}>
+        <h2>Expense Tracker</h2>
+        <p style={{ colo: "grey", width: "400px" }}>
+          Start taking control of your finances and life. Record,categorize and
+          analyze your spending.
+        </p>
       </div>
-      <div style={{ marginLeft: "10px" }}>
-        <SearchBar searchTerm={search} onSearchChange={setSearch} />
-        <Table search={search} expenses={expenses} />
+      <div style={{ display: "flex" }}>
+        <div>
+          <AddExpense saveExpense={saveExpense} />
+        </div>
+        <div style={{ marginLeft: "10px" }}>
+          <SearchBar searchTerm={search} onSearchChange={setSearch} />
+          <Table search={search} expenses={expenses} />
+        </div>
       </div>
     </div>
   );
