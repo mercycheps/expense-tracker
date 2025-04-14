@@ -1,12 +1,74 @@
-# React + Vite
+# Expense Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application that helps you manage your personal finances by recording, categorizing, and analyzing your expenses.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add new expenses with ease.
+- Search and filter expenses in real-time.
+- Delete expenses you no longer want to track.
+- Responsive and user-friendly interface.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** – Frontend library for building the UI.
+- **JavaScript** – App logic and interactions.
+- **CSS** – Styling the app.
+
+## Components
+
+### `App.js`
+Main component that:
+- Maintains the list of expenses (`useState`).
+- Handles saving and deleting expenses.
+- Integrates child components: `AddExpense`, `SearchBar`, and `Table`.
+
+### `AddExpense.js`
+A form component that allows users to input a new expense, including description, amount, and category.
+
+### `SearchBar.js`
+Takes user input to filter the list of expenses displayed in the table.
+
+### `Table.js`
+Displays the list of expenses. Includes delete functionality per row.
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm (Node Package Manager)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/expense-tracker.git
+   cd expense-tracker
+   ```
+
+   2.Install dependencies
+   ```
+   npm install
+
+   ```
+   3.Start the development server
+   ```
+   npm start
+   ```
+   The app will run at http://localhost:3000.
+
+   Folder Structure
+```
+   src/
+├── components/
+│   ├── Table.js
+│   └── SearchBar.js
+├── AddExpense.js
+├── App.js
+├── App.css
+└── index.js
+```
