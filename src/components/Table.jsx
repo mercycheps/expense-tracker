@@ -1,9 +1,17 @@
 import React from "react";
 
-export default function Table({ expenses, search }) {
+export default function Table({ expenses, search,onDelete }) {
   const filteredExpenses = expenses
     .filter((expense) => expense.description.includes(search))
     .sort((a, b) => a.category.localeCompare(b.category));
+
+   function Remove({id}){
+       return(
+      <button onClick={()=>onDelete(id)}>delete</button>
+       )
+   }
+  
+
   return (
     <table style={{ width: "70vw" }}>
       <thead>
@@ -26,7 +34,7 @@ export default function Table({ expenses, search }) {
               <td>{expense.category}</td>
               <td>{expense.amount}</td>
               <td>{expense.date}</td>
-              <td><button>delete</button></td>
+              <td><Remove id={expense.id}/></td>
             </tr>
           );
         })}

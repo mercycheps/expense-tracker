@@ -13,9 +13,10 @@ function App() {
     console.log(expenses);
   };
 
-//   const deleteExpense= ()=> {
-// setExpenses(expenses.filter((expense) => expense.))
-//   }
+  const deleteExpense = (id)=> {
+  console.log("Deleting"+ id);
+  setExpenses((Expenses)=>Expenses.filter((expense)=>expense.id !== id));
+  }
 
 
 
@@ -34,7 +35,7 @@ function App() {
         </div>
         <div style={{ marginLeft: "10px" }}>
           <SearchBar searchTerm={search} onSearchChange={setSearch} />
-          <Table search={search} expenses={expenses} />
+          <Table search={search} expenses={expenses} onDelete={deleteExpense} />
         </div>
       </div>
     </div>
