@@ -9,8 +9,12 @@ function App() {
   const [search, setSearch] = useState("");
 
   const saveExpense = (expense) => {
+    if(!expense.amount) return false;
+    if(!expense.description) return false;
+    if(!expense.category) return false;
+    if(!expense.date) return false;
     setExpenses(expenses.concat([expense]));
-    console.log(expenses);
+    return true;
   };
 
   const deleteExpense = (id)=> {

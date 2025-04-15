@@ -9,7 +9,7 @@ export default function AddExpense({ saveExpense }) {
   const [id, setid] = useState(Date.now());
 
   function createNewExpense() {
-    saveExpense({
+    const result = saveExpense({
       id,
       name,
       description,
@@ -18,12 +18,16 @@ export default function AddExpense({ saveExpense }) {
       date,
     });
 
-    setAmount('')
-    setCategory('')
-    setDescription('')
-    setName('')
-    setDate('')
-    setid(Date.now)
+    if(result) {
+
+      setAmount('')
+      setCategory('')
+      setDescription('')
+      setName('')
+      setDate('')
+      setid(Date.now)
+    }
+
   }
 
   return (
@@ -56,7 +60,7 @@ export default function AddExpense({ saveExpense }) {
 
       
       <input
-        type="text"
+        type="number"
         value={amount}
         placeholder="amount"
         onChange={(e) => setAmount(e.target.value)}
